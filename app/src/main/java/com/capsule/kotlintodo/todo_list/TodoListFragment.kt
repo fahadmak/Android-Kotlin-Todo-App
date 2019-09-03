@@ -11,6 +11,8 @@ import com.capsule.kotlintodo.R
 import com.capsule.kotlintodo.models.Todo
 import com.capsule.kotlintodo.todo_list.TodoListContract.Presenter
 import com.capsule.kotlintodo.todo_list.TodoListContract.TodoView
+import dagger.android.AndroidInjection
+import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_todo_list.view.*
 
 class TodoListFragment:Fragment(), TodoView {
@@ -32,10 +34,11 @@ class TodoListFragment:Fragment(), TodoView {
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_todo_list, container, false)
         todoListPresenter.attachView(this)
-        return inflater.inflate(R.layout.fragment_todo_list, container, false)
+        return rootView
     }
 
     override fun onAttach(context: Context?) {
+        AndroidSupportInjection.inject(this)
         super.onAttach(context)
     }
 
