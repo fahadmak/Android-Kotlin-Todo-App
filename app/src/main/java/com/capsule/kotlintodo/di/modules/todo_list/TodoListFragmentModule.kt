@@ -9,7 +9,7 @@ import dagger.Binds
 import dagger.Module
 
 
-@Module
+@Module(subcomponents = [TodoListFragmentSubComponent::class])
 abstract class TodoListFragmentModule {
 
     @Binds

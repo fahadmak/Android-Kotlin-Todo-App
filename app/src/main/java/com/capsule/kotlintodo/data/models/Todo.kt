@@ -1,4 +1,4 @@
-package com.capsule.kotlintodo.models
+package com.capsule.kotlintodo.data.models
 
 
 import com.google.gson.annotations.SerializedName
