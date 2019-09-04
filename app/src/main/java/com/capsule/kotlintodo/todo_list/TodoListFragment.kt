@@ -8,18 +8,17 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import com.capsule.kotlintodo.R
-import com.capsule.kotlintodo.models.Todo
+import com.capsule.kotlintodo.data.models.Todo
 import com.capsule.kotlintodo.todo_list.TodoListContract.Presenter
 import com.capsule.kotlintodo.todo_list.TodoListContract.TodoView
-import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
-import kotlinx.android.synthetic.main.fragment_todo_list.view.*
+import javax.inject.Inject
 
 class TodoListFragment:Fragment(), TodoView {
 
     lateinit var progressBar: ProgressBar
 
-    var todoListPresenter: Presenter = TodoListPresenter()
+    @Inject lateinit var todoListPresenter: TodoListPresenter
 
     companion object {
         fun getInstance(): TodoListFragment {
@@ -57,6 +56,7 @@ class TodoListFragment:Fragment(), TodoView {
     }
 
     override fun displayTodoList(todoList: List<Todo>) {
+        print("Hello")
     }
 
 }

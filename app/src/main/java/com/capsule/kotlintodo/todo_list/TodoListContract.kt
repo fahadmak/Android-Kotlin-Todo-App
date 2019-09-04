@@ -2,7 +2,7 @@ package com.capsule.kotlintodo.todo_list
 
 import com.capsule.kotlintodo.BasePresenter
 import com.capsule.kotlintodo.View
-import com.capsule.kotlintodo.models.Todo
+import com.capsule.kotlintodo.data.models.Todo
 
 interface TodoListContract {
 
